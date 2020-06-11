@@ -104,21 +104,36 @@
                 </svg>
               </a>
               <p>Оставьте свои данные, мы вам перезвоним</p>
-              <label for="name">Имя</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                minlength="3"
-                maxlength="20"
-              />
-              <label for="tel">Телефон</label>
-              <input type="tel" name="tel" id="tel" />
-              <label for="mail">Почта</label>
-              <input type="email" name="mail" id="mail" />
-              <label for="comment">Комментарий</label>
-              <textarea name="comment" id="comment" rows="6"></textarea>
-              <input type="checkbox" name="agree" id="agree" />
+              <label class="modal__field">
+                <input
+                  type="text"
+                  name="name"
+                  minlength="3"
+                  maxlength="20"
+                />Имя
+              </label>
+
+              <label class="modal__field">
+                <input type="tel" name="tel" />
+                Телефон
+              </label>
+
+              <label class="modal__field">
+                <input type="email" name="mail" />
+                Почта
+              </label>
+
+              <label class="modal__field">
+                <textarea name="comment" id="comment" rows="6"></textarea>
+                Комментарий
+              </label>
+
+              <label class="modal__field">
+                <input type="checkbox" name="agree" />
+                Соглашаюсь с рассылкой и принимаю
+                <a href="">Условия договора</a>
+              </label>
+              <button type="submit">Отправить</button>
             </div>
           </div>
         </div>
