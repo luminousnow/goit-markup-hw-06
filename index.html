@@ -87,17 +87,17 @@
           <h1 class="hero__title">
             Эффективные решения для вашего бизнеса
           </h1>
-          <button class="vrt-button vrt-button--no-link" data-open-modal>
+          <button class="vrt-button vrt-button--no-link" data-modal-open>
             Заказать услугу
           </button>
-          <div class="backdrop backdrop--hiden" data-backdrop>
+          <div class="backdrop backdrop--hiden" data-modal>
             <div class="modal">
               <a
                 href=""
                 class="modal__close-btn"
                 width="30"
                 height="30"
-                data-close-modal
+                data-modal-close
               >
                 <svg class="modal__close-icon" width="11" height="11">
                   <use href="./img/sprite.svg#icon-close"></use>
@@ -629,25 +629,6 @@
         <p class="copiright">2020 | Developed by GoIT Students</p>
       </div>
     </footer>
-    <script>
-      const refs = {
-        openModalBtn: document.querySelector("[data-open-modal]"),
-        closeModalBtn: document.querySelector("[data-close-modal]"),
-        backdrop: document.querySelector("[data-backdrop]"),
-      };
-
-      refs.openModalBtn.addEventListener("click", toggleModal);
-      refs.closeModalBtn.addEventListener("click", toggleModal);
-
-      refs.backdrop.addEventListener("click", logBackdropClick);
-
-      function toggleModal() {
-        refs.backdrop.classList.toggle("backdrop--hiden");
-      }
-
-      function logBackdropClick() {
-        console.log("Это клик в бекдроп");
-      }
-    </script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
