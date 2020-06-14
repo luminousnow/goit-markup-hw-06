@@ -453,6 +453,7 @@ input {
   color: var(--font-primary-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
 }
 
 input:focus {
@@ -482,6 +483,7 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
 }
 
 textarea:focus {
