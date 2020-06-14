@@ -87,53 +87,87 @@
           <h1 class="hero__title">
             Эффективные решения для вашего бизнеса
           </h1>
-          <button class="vrt-button vrt-button--no-link" data-modal-open>
+          <button class="hero__btn button button--no-link" data-modal-open>
             Заказать услугу
           </button>
           <div class="backdrop backdrop--hiden" data-modal>
             <div class="modal">
-              <a
-                href=""
-                class="modal__close-btn"
-                width="30"
-                height="30"
-                data-modal-close
-              >
+              <button class="modal__close-btn" data-modal-close>
                 <svg class="modal__close-icon" width="11" height="11">
                   <use href="./img/sprite.svg#icon-close"></use>
                 </svg>
-              </a>
-              <p>Оставьте свои данные, мы вам перезвоним</p>
-              <label class="modal__field">
-                <input
-                  type="text"
-                  name="name"
-                  minlength="3"
-                  maxlength="20"
-                />Имя
-              </label>
+              </button>
+              <p class="modal__title">
+                Оставьте свои данные, мы вам перезвоним
+              </p>
+              <form class="form js-speaker-form">
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="text"
+                    name="name"
+                    minlength="3"
+                    maxlength="20"
+                    autocomplete="name"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Имя</span>
+                  <svg class="form__icon">
+                    <use href="./img/sprite.svg#modal-person"></use>
+                  </svg>
+                </label>
 
-              <label class="modal__field">
-                <input type="tel" name="tel" />
-                Телефон
-              </label>
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="tel"
+                    name="tel"
+                    autocomplete="tel"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Телефон</span>
+                  <svg class="form__icon">
+                    <use href="./img/sprite.svg#modal-phone"></use>
+                  </svg>
+                </label>
 
-              <label class="modal__field">
-                <input type="email" name="mail" />
-                Почта
-              </label>
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Почта</span>
+                  <svg class="form__icon">
+                    <use href="./img/sprite.svg#modal-email"></use>
+                  </svg>
+                </label>
 
-              <label class="modal__field">
-                <textarea name="comment" id="comment" rows="6"></textarea>
-                Комментарий
-              </label>
+                <label class="form__field">
+                  <textarea name="comment" rows="6" placeholder=" "></textarea>
+                  <span class="form__field-title form__field-title--no-image"
+                    >Комментарий</span
+                  >
+                </label>
 
-              <label class="modal__field">
-                <input type="checkbox" name="agree" />
-                Соглашаюсь с рассылкой и принимаю
-                <a href="">Условия договора</a>
-              </label>
-              <button type="submit">Отправить</button>
+                <label class="form__field policy">
+                  <input
+                    class="checkbox checkbox--hiden"
+                    type="checkbox"
+                    name="policy"
+                    value="agree"
+                  />
+                  <span class="checkbox__icon"></span>
+                  Соглашаюсь с рассылкой и принимаю
+
+                  <a href="">Условия договора</a>
+                </label>
+                <button class="submit__btn button" type="submit">
+                  Отправить
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -632,7 +666,7 @@
                 id="email"
                 placeholder="E-mail"
               />
-              <a class="vrt-button join__btn join__btn--no-link" href=""
+              <a class="button join__btn join__btn--no-link" href=""
                 >Подписаться
                 <svg class="icon-send" width="20" height="20">
                   <use href="./img/sprite.svg#icon-send"></use>
@@ -645,5 +679,21 @@
       </div>
     </footer>
     <script src="./js/modal.js"></script>
+    <!-- test sending form -->
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
