@@ -456,7 +456,7 @@ input {
 }
 
 input:focus {
-  border: 1px solid #2196f3;
+  border: 1px solid var(--font-active-element);
 }
 
 .form__field > input:focus ~ .form__icon {
@@ -485,7 +485,7 @@ textarea {
 }
 
 textarea:focus {
-  border: 1px solid #2196f3;
+  border: 1px solid var(--font-active-element);
 }
 
 textarea:focus ~ .form__field-title {
