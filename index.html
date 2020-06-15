@@ -164,7 +164,11 @@
 
                   <a href="">Условия договора</a>
                 </label>
-                <button class="submit__btn button" type="submit">
+                <button
+                  class="submit__btn button"
+                  type="submit"
+                  data-modal-close
+                >
                   Отправить
                 </button>
               </form>
@@ -680,7 +684,7 @@
     </footer>
     <script src="./js/modal.js"></script>
     <!-- test sending form -->
-    <script>
+    <!-- <script>
       (() => {
         document
           .querySelector(".js-speaker-form")
@@ -694,6 +698,6 @@
             e.currentTarget.reset();
           });
       })();
-    </script>
+    </script> -->
   </body>
 </html>
